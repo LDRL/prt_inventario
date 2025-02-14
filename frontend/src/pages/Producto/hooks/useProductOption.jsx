@@ -49,8 +49,15 @@ export const useFetchProduct = (productId) => {
             if (response.status !== 200) {
                 throw new Error('Error al cargar el producto');
             }
-
-            return response.results; // Adapt and return the product
+            const data = {
+                id: response.data.id,
+                name: response.data.nombre,
+                amount: response.data.cantidad,
+                price: response.data.precio,
+                idCategory: response.data.categoria.id,
+                idProveedor: response.data.proveedor.id,
+            }
+            return data; // Adapt and return the product
         },
         enabled: !!productId, // Only runs if productId is available
         // onError: (error) => {
@@ -99,16 +106,16 @@ export const useUpdateProduct = () => {
     return useMutation({
         mutationFn: async (updatedProduct) => {
             const product = {
+                id: updatedProduct.id,
                 nombre: updatedProduct.name,
-                idcategoria: updatedProduct.idCategory,
-                idmarca: updatedProduct.idBrand,
-                idpresentacion: updatedProduct.idPresentation,
-                descripcion: updatedProduct.description,
+                cantidad: updatedProduct.amount,
+                precio: updatedProduct.price,
+                categoria: {id: updatedProduct.idCategory},
+                proveedor: {id: updatedProduct.idProveedor},
             };
 
-            const response = await axios.put(`${productUrl}${updatedProduct.productCode}/`, product);
-
-            if (response.status !== 200) {
+            const response = await axios.put(`${productUrl}${updatedProduct.id}/`, product);
+            if (response.status !== 201) {
                 throw new Error('Error al actualizar el producto');
             }
 

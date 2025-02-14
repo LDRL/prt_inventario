@@ -2,7 +2,6 @@ import React from 'react'
 import './App.css'
 import {BrowserRouter, Route, Navigate } from 'react-router-dom';
 import RoutersWitNotFound from './utils/routers-with-not-found.utility';
-import Crear from './pages/Crear';
 import AuthGuard from './guards/auth.guard';
 import { PrivateRoutes } from './utils/routes';
 import Private from './routes/private';

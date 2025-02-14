@@ -45,11 +45,10 @@ const CreateProduct = () => {
   
  useEffect(() => {
   if (id && data) {
-    console.log(data, "--data ---")
     dispatch(openModal(data));
     return;
   }
-  dispatch(closeModal());
+  // dispatch(closeModal());
   // dispatch(clearCategory());
 }, [dispatch, data]);
 
@@ -70,8 +69,6 @@ useEffect(() => {
 
   const onSubmit = async (data) => {
     setLoading(true);
-    console.log(currentProduct, "-current")
-    console.log(data, "---")
     try {
       // let responseData;
       if (currentProduct) {
@@ -93,7 +90,6 @@ useEffect(() => {
     return <p>Cargando opciones ....</p>
   }
   if(isError){
-    console.log(isError, "======")
     return <p>Error al cargar las opciones, {isError}</p>
   }
 
@@ -101,8 +97,6 @@ useEffect(() => {
     return <p>Cargando opciones ....</p>
   }
   if(isMarcaError){
-    console.log(isMarcaError, "======")
-
     return <p>Error al cargar las opciones</p>
   }
 
@@ -194,6 +188,7 @@ useEffect(() => {
                 type="button"
                 sx={{ mt: 2 }}
                 color='error'
+                onClick={() => navigate('/private/product')}
               >
                 Cancelar
               </Button>

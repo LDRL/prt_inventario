@@ -10,13 +10,11 @@ export const useFetchOptions = () => {
         queryKey: ['dropdownOptions'], 
         queryFn: async() => { 
             const response = await fetch(apiUrl+"categoria/");
-            console.log(response, "--- fetch options")
             if(!response.ok){
                 throw new Error('Errr al cargar las opciones')
             }
 
             const data = await response.json();
-            console.log(data.results, "----")
             return categoriasAdapter(data.results);
         },
         onError: (error) => {

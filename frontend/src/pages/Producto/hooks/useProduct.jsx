@@ -19,7 +19,6 @@ export const useProducts = (initialPage = 1) => {
 
     useEffect(() => {
         if(data){
-            console.log(data.results, "---data hook")
             const adaptedProducts = data ? data.results : [];
             setProducts(adaptedProducts || []);
             setTotal(data?.total || 0);

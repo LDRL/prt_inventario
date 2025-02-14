@@ -20,8 +20,8 @@ class ProductoViewset(viewsets.ModelViewSet):
     # permission_classes = [IsAuthenticated]
 
     filter_backends = (DjangoFilterBackend, filters.SearchFilter, filters.OrderingFilter)
-    filter_fields = ("id", "id")
-    search_fields = ("id", "id")
+    filter_fields = ("nombre", "id")
+    search_fields = ("nombre", "id")
     ordering_fields = ("nombre", "id")
 
     def get_queryset(self):

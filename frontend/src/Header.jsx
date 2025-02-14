@@ -10,9 +10,8 @@ function Header() {
             </div>
             <nav id="nav">
                 <ul>
-                    <li><a href="/private/inicio">Inicio</a></li>
-                    <li><a href="/private/buscar">Sobre mi</a></li>
-                    <li><a href="/private/crear">Contacto</a></li>
+                    <li><a href="/private">Inicio</a></li>
+                    <li><a href="/private/product">Producto</a></li>
                 </ul>
             </nav>
         </header>

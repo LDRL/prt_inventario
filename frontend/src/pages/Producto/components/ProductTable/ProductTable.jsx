@@ -25,7 +25,6 @@ const ListOfProducts= () => {
         handlePaginationModelChange,
     } = useProducts();
 
-    console.log(products);
 
     const handleEditProduct = (product) => {
 
@@ -55,22 +54,22 @@ const ListOfProducts= () => {
         },
         {
             field: 'categoria',
-            headerName: 'Marca',
+            headerName: 'Categoria',
             flex: 1,
             // renderCell: (params: GridRenderCellParams) => <>{params.value}</>,
             renderCell: (params) => <>{params.value ? params.value.nombre : 'Sin marca'}</>,
         },
         {
             field: 'proveedor',
-            headerName: 'Presentacion',
+            headerName: 'Proveedor',
             flex: 1,
             renderCell: (params) => <>{params.value ? params.value.nombre : 'Sin Presentacion'}</>,
         },
         {
-            field: 'category',
-            headerName: 'Categoria',
+            field: 'precio',
+            headerName: 'Precio',
             flex: 1,
-            renderCell: (params) => <>{params.value ? params.value.name : 'Sin Categoria'}</>,
+            renderCell: (params) => <>{params.value}</>,
         },
         {
             field: 'actions',

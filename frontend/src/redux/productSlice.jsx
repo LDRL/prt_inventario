@@ -11,8 +11,6 @@ const productSlice = createSlice({
   reducers: {
     openModal: (state, action) => {
       state.currentProduct = action.payload;
-      console.log(state.currentProduct)
-      console.log('Producto guardado en Redux:', action.payload);
     },
     closeModal: (state) => {
       state.currentProduct = null;

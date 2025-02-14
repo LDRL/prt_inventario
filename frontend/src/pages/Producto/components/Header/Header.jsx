@@ -3,7 +3,6 @@ import { Button } from '@mui/material';
 import { useDispatch } from 'react-redux';
 import { useForm } from 'react-hook-form';
 import { setSearch } from '../../../../redux/productSlice';
-                           
 import debounce from 'just-debounce-it';
 
 import { Navigate, useNavigate } from 'react-router-dom';
